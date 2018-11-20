@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Relatorio De Obra Diario</string>
+    <string name="project_photo_description">Project photo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="project_image_content_description">Project image</string>
+    <string name="project_name">Project name</string>
+    <string name="create_project">Create project</string>
+    <string name="create_report">Create report</string>
+</resources>

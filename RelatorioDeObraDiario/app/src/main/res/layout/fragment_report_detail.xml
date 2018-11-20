@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="projectReportDetail"
+                type="br.com.diario.obra.de.relatorio.relatoriodeobradiario.view.databinding.ProjectReportDetailDT"/>
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.activity.MainActivity">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.constraint.Guideline
+                    android:id="@+id/start_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/new_project_default_margin"/>
+
+            <android.support.constraint.Guideline
+                    android:id="@+id/end_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/new_project_default_margin"/>
+
+            <ImageView
+                    android:id="@+id/detail_project_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_project_default_image"
+                    app:image="@{projectReportDetail.projectImage}"
+                    app:layout_constraintDimensionRatio="H,5:2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:contentDescription="@string/project_image_content_description"/>
+
+            <TextView
+                    android:id="@+id/label_project_name"
+                    android:text="@{projectReportDetail.projectName}"
+                    android:hint="Project's name"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_project_image"
+                    app:layout_constraintEnd_toEndOf="@+id/end_guide"/>
+
+            <TextView
+                    android:id="@+id/label_project_delivery"
+                    android:text="Delivery date:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/label_project_name"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_project_delivery"/>
+
+
+            <TextView
+                    android:id="@+id/tv_project_delivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="11/11/2001"
+                    android:textAlignment="textEnd"
+                    android:gravity="end"
+                    app:text="@{projectReportDetail.projectDeliveryDate}"
+                    android:maxLength="25"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toEndOf="@id/label_project_delivery"
+                    app:layout_constraintEnd_toEndOf="@id/end_guide"
+                    app:layout_constraintTop_toBottomOf="@id/label_project_name"/>
+
+            <TextView
+                    android:id="@+id/label_report_creation"
+                    android:text="Report creation date:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/label_project_delivery"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_report_creation"/>
+
+
+            <TextView
+                    android:id="@+id/tv_report_creation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="11/11/2001"
+                    android:textAlignment="textEnd"
+                    android:gravity="end"
+                    app:text="@{projectReportDetail.reportCreationDate}"
+                    android:maxLength="25"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toEndOf="@id/label_report_creation"
+                    app:layout_constraintEnd_toEndOf="@id/end_guide"
+                    app:layout_constraintTop_toBottomOf="@id/tv_project_delivery"/>
+
+            <TextView
+                    android:id="@+id/label_report_reference"
+                    android:text="Report reference date:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/label_report_creation"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_report_reference"/>
+
+
+            <TextView
+                    android:id="@+id/tv_report_reference"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="11/11/2001"
+                    android:textAlignment="textEnd"
+                    android:gravity="end"
+                    app:text="@{projectReportDetail.reportReferenceDate}"
+                    android:maxLength="25"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toEndOf="@id/label_report_reference"
+                    app:layout_constraintEnd_toEndOf="@id/end_guide"
+                    app:layout_constraintTop_toBottomOf="@id/tv_report_creation"/>
+
+            <TextView
+                    android:id="@+id/detail_resume"
+                    android:text="@{projectReportDetail.reportResume}"
+                    android:hint="Resume"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/label_report_reference"
+                    app:layout_constraintEnd_toEndOf="@+id/end_guide"/>
+
+            <TextView
+                    android:id="@+id/detail_body"
+                    android:text="@{projectReportDetail.reportBody}"
+                    android:hint="Body"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_resume"
+                    app:layout_constraintEnd_toEndOf="@+id/end_guide"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

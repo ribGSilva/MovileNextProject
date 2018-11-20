@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="project"
+                type="br.com.diario.obra.de.relatorio.relatoriodeobradiario.view.databinding.ProjectDT"/>
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.activity.MainActivity">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.constraint.Guideline
+                    android:id="@+id/start_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/new_project_default_margin"/>
+
+            <android.support.constraint.Guideline
+                    android:id="@+id/end_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/new_project_default_margin"/>
+
+            <ImageView
+                    android:id="@+id/new_project_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_project_default_image"
+                    app:layout_constraintDimensionRatio="H,5:2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:contentDescription="@string/project_image_content_description"/>
+
+            <EditText
+                    android:id="@+id/et_new_project_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={project.name}"
+                    android:hint="Project's name"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="@id/start_guide"
+                    app:layout_constraintEnd_toEndOf="@id/end_guide"
+                    app:layout_constraintTop_toBottomOf="@id/new_project_image"
+                    android:inputType="text"/>
+
+            <TextView
+                    android:id="@+id/label_new_delivery_date"
+                    android:text="Delivery date:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/start_guide"
+                    app:layout_constraintTop_toBottomOf="@+id/et_new_project_name"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_tv_new_project_delivery"/>
+
+            <TextView
+                    android:id="@+id/tv_tv_new_project_delivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    android:hint="01/01/2001"
+                    app:text="@{project.deliveryDate}"
+                    app:layout_constraintStart_toEndOf="@+id/label_new_delivery_date"
+                    app:layout_constraintTop_toBottomOf="@id/et_new_project_name"
+                    app:layout_constraintEnd_toEndOf="@+id/end_guide" />
+
+            <Button
+                    android:id="@+id/btn_create_project"
+                    android:text="@string/create_project"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    app:layout_constraintStart_toStartOf="@id/start_guide"
+                    app:layout_constraintEnd_toEndOf="@id/end_guide"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tv_new_project_delivery"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>
